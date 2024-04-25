@@ -2,8 +2,14 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="fixed top-0 h-fit w-full bg-black p-2">
-      <h1 className="pl-4 text-3xl font-black text-white">FoodFocus</h1>
+    <div className="navBar">
+      <a href="/">
+      <h1 className="FoodFoc">FoodFocus</h1>
+      </a>
+      <div className="navItems">
+        <a href="/About">About</a>
+        <a href="/Product">Product</a>
+      </div>
     </div>
   );
 };

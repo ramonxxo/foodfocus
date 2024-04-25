@@ -22,21 +22,21 @@ export const Posts = () => {
   const deletePost = api.post.deletePost.useMutation({});
 
   return (
-    <div className="w-full flex-col pt-5 text-black">
+    <div className="postcontainer1">
       {postsArray?.map((data) => {
         return (
-          <div className="my-1 w-full rounded-lg bg-white p-2" key={data.id}>
-            <span className="flex items-end gap-2">
-              <h1 className="text-lg font-semibold">u/{data.name}</h1>
-              <p className="pb-1 text-xs text-gray-500">
+          <div className="postcontainer2" key={data.id}>
+            <span className="postcontainer3">
+              <h1 className="postcontainer4">u/{data.name}</h1>
+              <p className="postcontainer5">
                 {new Date(data.createdAt).toDateString()}
               </p>
             </span>
             <p>{data.content}</p>
-            <div className="flex w-full justify-between pt-2">
-              <span className="flex items-end gap-2">
+            <div className="postcontainer6">
+              <span className="postcontainer7">
                 <button
-                  className="rounded-lg border-[1px] border-black p-1 text-base text-red-600"
+                  className="postcontainer8"
                   onClick={() => {
                     likePost.mutate({ id: data.id });
                     setLikes((prev) => {
@@ -53,12 +53,12 @@ export const Posts = () => {
                 </button>
                 {data.likes}
               </span>
-              <div className="flex items-end gap-3">
-                <span className="text-sm text-slate-500">
+              <div className="postcontainer9">
+                <span className="postcontainer10">
                   {new Date(data.createdAt).toLocaleTimeString()}
                 </span>
                 <button
-                  className="rounded-lg border-[1px] border-black p-1 text-base"
+                  className="postcontainer11"
                   onClick={() => {
                     deletePost.mutate({ id: data.id });
                     setLikes((prev) => {
